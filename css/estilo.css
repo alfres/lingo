@@ -1,0 +1,52 @@
+ body { background-color: black; font-family: Arial,  sans-serif;}
+ #main{
+ margin: auto;
+    width: 300px;
+w3-display-container;
+    text-align: center; 
+    background-color: black;
+	
+}
+
+.box{
+
+margin: auto;
+width: 50px;
+height: 50px;
+color: black;
+font-size: 44px;
+text-align: center;
+display: block;
+background-color: Tomato;
+vertical-align:middle;
+line-height: 50px;
+}
+.fila{
+cursor:context-menu;
+margin: auto;
+width: 296px;
+height: 56px;
+color: white;
+font-size: 23px;
+text-align: center;
+display: flex;
+background-color: white;
+}
+#intro{
+
+margin: auto;
+width: 230px;
+height: 66px;
+color: red;
+
+
+
+background-color: white;
+}
+
+.bot{
+	
+visibility:hidden;
+
+
+}
