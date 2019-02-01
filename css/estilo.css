@@ -1,15 +1,10 @@
- body { background-color: black; font-family: Arial,  sans-serif;}
+ body {  font-family: Arial,  sans-serif;}
  #main{
  margin: auto;
     width: 300px;
-w3-display-container;
-    text-align: center; 
-    background-color: black;
-	
 }
 
 .box{
-
 margin: auto;
 width: 50px;
 height: 50px;
@@ -33,20 +28,10 @@ display: flex;
 background-color: white;
 }
 #intro{
-
+cursor: none;
 margin: auto;
 width: 230px;
 height: 66px;
-color: red;
-
-
-
-background-color: white;
 }
 
-.bot{
-	
-visibility:hidden;
-
-
-}
+.bot{ visibility:hidden;}
