@@ -107,6 +107,7 @@ function check3(tt, tt2, fil){
 
 function bingo(){
 intro.contentEditable = "false"	
+help.style.visibility = "hidden"
 bot1.style.visibility = "hidden"
 bot2.style.visibility = "visible"
 intro.textContent = 'BINGO'
