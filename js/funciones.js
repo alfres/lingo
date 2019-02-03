@@ -116,7 +116,7 @@ bot3.style.visibility = "visible"
 }
 
 function linki(){
-$( '#dicc' ).load('http://www.wordreference.com/definicion/' + target  + ' #article');
+$( '#dicc' ).load('https://www.wordreference.com/definicion/' + target  + ' #article');
  $( '#dicc' ).css( "color", "black" );	
 document.getElementById('id01').style.display='block'	
 }
