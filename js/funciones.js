@@ -121,6 +121,11 @@ $( '#dicc' ).load('https://www.wordreference.com/definicion/' + target  + ' #art
 document.getElementById('id01').style.display='block'	
 }
 
+function aspa(){
+document.getElementById('id01').style.display='none'
+document.getElementById('dicc').innerHTML=''
+}
+
 function up(){
 	$(".b1" ).each(function( index ) {
 	this.textContent = ''
@@ -138,7 +143,7 @@ timer1 = setTimeout(function(){
 	this.style.backgroundColor = "Tomato"
 })
 	
-	}, 300);
+	}, 200);
 	
 timer2 = setTimeout(function(){
 	clearTimeout(timer2)
@@ -151,7 +156,7 @@ timer2 = setTimeout(function(){
 	this.style.backgroundColor = "Tomato"
 })
 	
-	}, 600);
+	}, 400);
 
 timer3 = setTimeout(function(){
 	clearTimeout(timer3)
@@ -164,7 +169,7 @@ timer3 = setTimeout(function(){
 	this.style.backgroundColor = "Tomato"
 })
 	
-	}, 900);
+	}, 600);
 
 timer4 = setTimeout(function(){
 	clearTimeout(timer4)
@@ -177,11 +182,11 @@ timer4 = setTimeout(function(){
 	this.style.backgroundColor = "Tomato"
 })
 	
-	}, 1200);
+	}, 800);
 
 timer5 = setTimeout(function(){
 	clearTimeout(timer5)
 
 	check()
-	}, 1300);	
+	}, 950);	
 }
