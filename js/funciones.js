@@ -91,8 +91,9 @@ function check3(tt, tt2, fil){
 	if(tt2[n] == tt[n2]){
 		var myclases = ".b" +  fil
 		$(myclases ).each(function( index ) {
-		       if(this.textContent == tt2[n] && this.style.backgroundColor == "red" )this.style.backgroundColor = "Orange"
-			
+		       if(this.textContent == tt2[n] && this.style.backgroundColor == "red" ){
+				   this.style.backgroundColor = "Orange"; return false
+			   }
 			})
 	   descolocadas += 1; desco.textContent = descolocadas
 			mal -= 1; malo.textContent = mal		
