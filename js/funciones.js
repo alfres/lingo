@@ -127,67 +127,27 @@ document.getElementById('id01').style.display='none'
 document.getElementById('dicc').innerHTML=''
 }
 
+function up2(timer, nu, f1, f2){
+	clearTimeout(timer)
+		$(f1 ).each(function( index ) {
+	this.textContent = $( '#box' + (index + nu) ).html()
+	this.style.backgroundColor = $( '#box' + (index + nu) ).css( "background-color")
+	})
+		$(f2 ).each(function( index ) {
+	this.textContent = ''
+	this.style.backgroundColor = "Tomato"
+})	
+}
 function up(){
 	$(".b1" ).each(function( index ) {
 	this.textContent = ''
 	this.style.backgroundColor = "Tomato"
 })
 
-timer1 = setTimeout(function(){
-	clearTimeout(timer1)
-		$(".b1" ).each(function( index ) {
-	this.textContent = $( '#box' + (index + 6) ).html()
-	this.style.backgroundColor = $( '#box' + (index + 6) ).css( "background-color")
-	})
-		$(".b2" ).each(function( index ) {
-	this.textContent = ''
-	this.style.backgroundColor = "Tomato"
-})
-	
-	}, 200);
-	
-timer2 = setTimeout(function(){
-	clearTimeout(timer2)
-		$(".b2" ).each(function( index ) {
-	this.textContent = $( '#box' + (index + 11) ).html()
-	this.style.backgroundColor = $( '#box' + (index + 11) ).css( "background-color")
-	})
-		$(".b3" ).each(function( index ) {
-	this.textContent = ''
-	this.style.backgroundColor = "Tomato"
-})
-	
-	}, 400);
+timer1 = setTimeout(function(){ up2(timer1, 6,  ".b1", ".b2") }, 200);
+timer2 = setTimeout(function(){ up2(timer2, 11, ".b2", ".b3") }, 400);
+timer3 = setTimeout(function(){ up2(timer3, 16, ".b3", ".b4") }, 600);
+timer4 = setTimeout(function(){ up2(timer4, 21, ".b4", ".b5") }, 800);
 
-timer3 = setTimeout(function(){
-	clearTimeout(timer3)
-		$(".b3" ).each(function( index ) {
-	this.textContent = $( '#box' + (index + 16) ).html()
-	this.style.backgroundColor = $( '#box' + (index + 16) ).css( "background-color")
-	})
-		$(".b4" ).each(function( index ) {
-	this.textContent = ''
-	this.style.backgroundColor = "Tomato"
-})
-	
-	}, 600);
-
-timer4 = setTimeout(function(){
-	clearTimeout(timer4)
-		$(".b4" ).each(function( index ) {
-	this.textContent = $( '#box' + (index + 21) ).html()
-	this.style.backgroundColor = $( '#box' + (index + 21) ).css( "background-color")
-	})
-		$(".b5" ).each(function( index ) {
-	this.textContent = ''
-	this.style.backgroundColor = "Tomato"
-})
-	
-	}, 800);
-
-timer5 = setTimeout(function(){
-	clearTimeout(timer5)
-
-	check()
-	}, 950);	
+timer5 = setTimeout(function(){clearTimeout(timer5); check()}, 950);	
 }
