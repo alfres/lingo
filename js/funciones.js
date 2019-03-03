@@ -2,8 +2,23 @@ var target, t , t2, fi = 0, intentos = 0, bien = 0, descolocadas = 0, mal = 0, t
 
 window.onload = otra
 
+function sendip(d){
+var dato = new FormData();
+dato.append("data" , d);
+dato.append("fila" , fi);
+var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
+ xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      //console.log(xhr.response);
+	  //alert(xhr.response)
+    }
+  }
+xhr.open( 'post', 'https://tekintools.com/lingo/action_page.php', true );
+xhr.send(dato);	
+}
+
 function otra(){
-	
+sendip("data")	
 intentos = 0;	bien = 0; descolocadas = 0; mal = 0; fi = 0
 	veces.textContent = intentos
 	co.textContent = bien
@@ -107,6 +122,7 @@ function check3(tt, tt2, fil){
 }
 
 function bingo(){
+	sendip("bingo")
 intro.contentEditable = "false"	
 help.style.visibility = "hidden"
 bot1.style.visibility = "hidden"
@@ -128,6 +144,7 @@ document.getElementById('dicc').innerHTML=''
 }
 
 function up2(timer, nu, f1, f2){
+	
 	clearTimeout(timer)
 		$(f1 ).each(function( index ) {
 	this.textContent = $( '#box' + (index + nu) ).html()
@@ -144,10 +161,10 @@ function up(){
 	this.style.backgroundColor = "Tomato"
 })
 
-timer1 = setTimeout(function(){ up2(timer1, 6,  ".b1", ".b2") }, 200);
-timer2 = setTimeout(function(){ up2(timer2, 11, ".b2", ".b3") }, 400);
-timer3 = setTimeout(function(){ up2(timer3, 16, ".b3", ".b4") }, 600);
-timer4 = setTimeout(function(){ up2(timer4, 21, ".b4", ".b5") }, 800);
-
+	
+timer1 = setTimeout(function(){ up2(timer1,  6,  ".b1" ,".b2" )},200);	
+timer2 = setTimeout(function(){ up2(timer2, 11,  ".b2" ,".b3" )},400);	
+timer3 = setTimeout(function(){ up2(timer3, 16,  ".b3" ,".b4" )},600);	
+timer4 = setTimeout(function(){ up2(timer4, 21,  ".b4" ,".b5" )},800);	
 timer5 = setTimeout(function(){clearTimeout(timer5); check()}, 950);	
 }

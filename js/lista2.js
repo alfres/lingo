@@ -1,0 +1,1 @@
+var pal = ["AZADA", "BILIS", "PERRO"]
