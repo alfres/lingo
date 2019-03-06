@@ -6,6 +6,7 @@ function sendip(d){
 var dato = new FormData();
 dato.append("data" , d);
 dato.append("fila" , fi);
+dato.append("word" , target);
 var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
  xhr.onreadystatechange = function() {
     if (xhr.readyState === 4) {
@@ -18,6 +19,7 @@ xhr.send(dato);
 }
 
 function otra(){
+	target = pal[Math.floor(Math.random() * pal.length)]
 sendip("data")	
 intentos = 0;	bien = 0; descolocadas = 0; mal = 0; fi = 0
 	veces.textContent = intentos
@@ -35,7 +37,7 @@ bot2.style.visibility = "hidden"
 bot3.style.visibility = "hidden"
 intro.focus()
  intro.textContent = ''
- target = pal[Math.floor(Math.random() * pal.length)]
+ 
 }
 
 function showbutton(e){
