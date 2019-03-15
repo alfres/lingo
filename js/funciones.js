@@ -1,6 +1,33 @@
-var target, t , t2, fi = 0, intentos = 0, bien = 0, descolocadas = 0, mal = 0, timer1, timer2, timer3, timer4, timer5
+var target, t , t2, fi = 0, timer1, timer2, timer3, timer4, timer5
 
-window.onload = otra
+var intentos = {
+	valor: 0,
+ sumar:function(){this.valor += 1; veces.textContent = this.valor},
+ limpiar:function(){this.valor = 0;veces.textContent = this.valor}
+}
+
+var bien = {
+	valor: 0,
+ sumar:function(){this.valor += 1; co.textContent = this.valor},
+ limpiar:function(){this.valor = 0;co.textContent = this.valor}
+}
+
+var descolocadas = {
+	valor: 0,
+ sumar:function(){this.valor += 1; desco.textContent = this.valor},
+ limpiar:function(){this.valor = 0;desco.textContent = this.valor}
+}
+
+var mal = {
+	valor: 0,
+ sumar:function(){this.valor = 5; malo.textContent = this.valor},
+ restar:function(){this.valor -= 1; malo.textContent = this.valor},
+ limpiar:function(){this.valor = 0;malo.textContent = this.valor}
+}
+
+
+
+window.onload = carre
 
 function sendip(d){
 var dato = new FormData();
@@ -20,17 +47,17 @@ xhr.send(dato);
 
 function otra(){
 	target = pal[Math.floor(Math.random() * pal.length)]
-sendip("data")	
-intentos = 0;	bien = 0; descolocadas = 0; mal = 0; fi = 0
-	veces.textContent = intentos
-	co.textContent = bien
-	 desco.textContent = descolocadas
-	 malo.textContent = mal
+	sendip("data")
+	intentos.limpiar(); bien.limpiar(); descolocadas.limpiar(); mal.limpiar();
+	
+	
+   fi = 0
 	document.getElementById('id01').style.display='none'
 	$(".box" ).each(function( index ) {
 	this.textContent = ''
 	this.style.backgroundColor = "Tomato"
-})	
+})
+	
 intro.contentEditable = "true"	
 	
 bot2.style.visibility = "hidden"
@@ -47,15 +74,10 @@ if(e.textContent.length == 5){bot1.style.visibility = "visible"; bot1.focus()} e
 function check0(){ if(fi == 5){up()	} else {check()} }
 
 function check(){
+  if(fi < 5)fi += 1
+	bien.limpiar(); descolocadas.limpiar(); mal.sumar();
 
-	if(fi < 5)fi += 1
-	
-bien = 0; descolocadas = 0; mal = 5;
-co.textContent = bien
-	 desco.textContent = descolocadas
-	 malo.textContent = mal
-
- t = target.split('')
+	 t = target.split('')
  t2 = intro.textContent.toUpperCase().split('')
  var myclases = ".b" +  fi
 	
@@ -64,15 +86,10 @@ co.textContent = bien
     this.style.backgroundColor = "red"
 })
 
-while ( check2(t, t2, fi) == false) {
-  check2(t, t2, fi)
-}
+while ( check2(t, t2, fi) == false) { check2(t, t2, fi)}
 
-intentos += 1; veces.textContent = intentos
-if(bien == 5)return bingo()
-
-
-
+intentos.sumar()
+if(bien.valor == 5)return bingo()
 
 intro.focus()
 intro.textContent = ''	
@@ -86,8 +103,8 @@ function check2(tt, tt2, fil){
 		var myclases = "#box" +  (((fil -1) * 5) + n + 1)
 		$(myclases ).each(function( index ) {
 			this.style.backgroundColor = "MediumSeaGreen"
-			bien += 1; co.textContent = bien
-			mal -= 1; malo.textContent = mal
+			bien.sumar()
+			mal.restar()
 	t.splice(n,1)
 	t2.splice(n,1)
 	return false
@@ -95,9 +112,7 @@ function check2(tt, tt2, fil){
 	})	
 	}
 }
-while ( check3(t, t2, fil) == false) {
-  check3(t, t2, fil)
-}	
+while ( check3(t, t2, fil) == false) { check3(t, t2, fil)}	
 
 }
 
@@ -112,8 +127,8 @@ function check3(tt, tt2, fil){
 				   this.style.backgroundColor = "Orange"; return false
 			   }
 			})
-	   descolocadas += 1; desco.textContent = descolocadas
-			mal -= 1; malo.textContent = mal		
+	   descolocadas.sumar()
+		mal.restar()		
 	t.splice(n2,1)
 	t2.splice(n,1)
 	return false
@@ -169,4 +184,24 @@ timer2 = setTimeout(function(){ up2(timer2, 11,  ".b2" ,".b3" )},400);
 timer3 = setTimeout(function(){ up2(timer3, 16,  ".b3" ,".b4" )},600);	
 timer4 = setTimeout(function(){ up2(timer4, 21,  ".b4" ,".b5" )},800);	
 timer5 = setTimeout(function(){clearTimeout(timer5); check()}, 950);	
+}
+
+function carre(){
+var newNode , newNode2
+for (var n = 1; n < 6;n++) {	
+newNode = document.createElement("div");
+newNode.id = 'fila' + n
+newNode.classList.add("fila", "w3-sand");
+document.getElementById('main').appendChild(newNode);
+document.getElementById('main').insertBefore(newNode, document.getElementById('info'));
+for (var n2 = 1; n2 < 6;n2++) {
+newNode2 = document.createElement("div")
+newNode2.id = 'box' + (((n-1) * 5) + n2)
+newNode2.classList.add("box", "b" + n);
+newNode.appendChild(newNode2);
+}
+
+}
+	
+otra()	
 }
