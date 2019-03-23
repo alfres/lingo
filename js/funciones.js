@@ -103,7 +103,7 @@ while ( check2(t, t2, fi) == false) { check2(t, t2, fi)}
 
 intentos.sumar()
 if(bien.valor == 5)return bingo()
-
+bot1.style.visibility = "hidden"
 intro.focus()
 intro.textContent = ''	
 }
