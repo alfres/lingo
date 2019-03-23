@@ -1,31 +1,44 @@
 var target, t , t2, fi = 0, timer1, timer2, timer3, timer4, timer5
 
-var intentos = {
-	valor: 0,
+var intentos = { valor: 0,
  sumar:function(){this.valor += 1; veces.textContent = this.valor},
  limpiar:function(){this.valor = 0;veces.textContent = this.valor}
 }
 
-var bien = {
-	valor: 0,
+var bien = { valor: 0,
  sumar:function(){this.valor += 1; co.textContent = this.valor},
  limpiar:function(){this.valor = 0;co.textContent = this.valor}
 }
 
-var descolocadas = {
-	valor: 0,
+var descolocadas = { valor: 0,
  sumar:function(){this.valor += 1; desco.textContent = this.valor},
  limpiar:function(){this.valor = 0;desco.textContent = this.valor}
 }
 
-var mal = {
-	valor: 0,
+var mal = { valor: 0,
  sumar:function(){this.valor = 5; malo.textContent = this.valor},
  restar:function(){this.valor -= 1; malo.textContent = this.valor},
  limpiar:function(){this.valor = 0;malo.textContent = this.valor}
 }
 
+function carre(){
+var newNode , newNode2
+for (var n = 1; n < 6;n++) {	
+newNode = document.createElement("div");
+newNode.id = 'fila' + n
+newNode.classList.add("fila", "w3-sand");
+document.getElementById('main').insertBefore(newNode, document.getElementById('info'));
+for (var n2 = 1; n2 < 6;n2++) {
+newNode2 = document.createElement("div")
+newNode2.id = 'box' + (((n-1) * 5) + n2)
+newNode2.classList.add("box", "b" + n);
+newNode.appendChild(newNode2);
+}
 
+}
+	
+otra()	
+}
 
 window.onload = carre
 
@@ -170,13 +183,13 @@ function up2(timer, nu, f1, f2){
 		$(f2 ).each(function( index ) {
 	this.textContent = ''
 	this.style.backgroundColor = "Tomato"
-})	
+    })	
 }
 function up(){
 	$(".b1" ).each(function( index ) {
 	this.textContent = ''
 	this.style.backgroundColor = "Tomato"
-})
+    })
 
 	
 timer1 = setTimeout(function(){ up2(timer1,  6,  ".b1" ,".b2" )},200);	
@@ -186,22 +199,3 @@ timer4 = setTimeout(function(){ up2(timer4, 21,  ".b4" ,".b5" )},800);
 timer5 = setTimeout(function(){clearTimeout(timer5); check()}, 950);	
 }
 
-function carre(){
-var newNode , newNode2
-for (var n = 1; n < 6;n++) {	
-newNode = document.createElement("div");
-newNode.id = 'fila' + n
-newNode.classList.add("fila", "w3-sand");
-document.getElementById('main').appendChild(newNode);
-document.getElementById('main').insertBefore(newNode, document.getElementById('info'));
-for (var n2 = 1; n2 < 6;n2++) {
-newNode2 = document.createElement("div")
-newNode2.id = 'box' + (((n-1) * 5) + n2)
-newNode2.classList.add("box", "b" + n);
-newNode.appendChild(newNode2);
-}
-
-}
-	
-otra()	
-}
