@@ -60,9 +60,9 @@ xhr.send(dato);
 
 function otra(){
 	target = pal[Math.floor(Math.random() * pal.length)]
-	sendip("data")
-	intentos.limpiar(); bien.limpiar(); descolocadas.limpiar(); mal.limpiar();
 	
+	intentos.limpiar(); bien.limpiar(); descolocadas.limpiar(); mal.limpiar();
+	sendip("data")
 	
    fi = 0
 	document.getElementById('id01').style.display='none'
