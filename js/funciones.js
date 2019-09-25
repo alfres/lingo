@@ -45,7 +45,7 @@ window.onload = carre
 function sendip(d){
 var dato = new FormData();
 dato.append("data" , d);
-dato.append("fila" , fi);
+dato.append("fila" , intentos.valor);
 dato.append("word" , target);
 var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
  xhr.onreadystatechange = function() {
