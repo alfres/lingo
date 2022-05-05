@@ -5,6 +5,7 @@
 }
 
 .box{
+user-select: none;	
 margin: auto;
 width: 50px;
 height: 50px;
@@ -32,6 +33,63 @@ cursor: none;
 margin: auto;
 width: 230px;
 height: 66px;
+user-select: none;
 }
 
 .bot{ visibility:hidden;}
+
+            #teclado {align-self:stretch;
+margin: auto;
+                width:80%;
+
+                background-color: black;
+
+                overflow: hidden;
+
+            }
+
+            #letras>span {
+user-select: none;
+                padding:10px;
+
+                width:9%;
+
+                text-align: center;
+                color: black;
+                margin:2px;
+font-size: 20px;
+                float:left;
+
+                cursor:pointer;
+
+                border-radius: 3px;
+
+                background-color:grey;
+
+                box-sizing: border-box;
+
+            }
+
+            #letras>span.space {
+
+                width: calc( 15% - 4px);
+
+            }
+
+            #letras>span.space::after {
+
+                content:"GO";
+
+            }
+			
+			#letras>span.delete {
+
+                width: calc( 14% - 4px);
+
+            }
+
+            #letras>span.delete::after {
+
+                content:"del";
+
+            }
