@@ -105,6 +105,7 @@ intentos.sumar()
 if(bien.valor == 5)return bingo()
 bot1.style.visibility = "hidden"
 intro.focus()
+	sendip(intro.textContent)
 intro.textContent = ''	
 }
 
